@@ -2,6 +2,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ApiSettingsType, ConfigurationType } from './configuration';
 import {
   BadRequestException,
+  Catch,
   INestApplication,
   ValidationPipe,
 } from '@nestjs/common';
@@ -56,6 +57,7 @@ const addGlobalPipeToApp = (app: INestApplication) => {
     }),
   );
 };
+
 const addGlobalFilterToApp = async (
   app: INestApplication,
   isNonProduction: boolean,

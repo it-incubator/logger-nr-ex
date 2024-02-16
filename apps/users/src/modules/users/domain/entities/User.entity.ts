@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Logger } from '@nestjs/common';
 
 export class CreateUserDto {
   name: string;
@@ -20,6 +21,7 @@ export class User {
   createdAt: Date;
 
   static createUser(dto: CreateUserDto) {
+    Logger.log(`static log = ${JSON.stringify(dto)}`);
     const user = new User();
     user.age = dto.age;
     user.name = dto.name;
