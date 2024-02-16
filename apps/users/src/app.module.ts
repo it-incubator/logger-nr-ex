@@ -3,13 +3,13 @@ import { UsersModule } from './modules/users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import configuration from './settings/configuration';
 import { ConfigModule } from '@nestjs/config';
-import { RequestContextMiddleware } from './common/middleware/request-context.middleware';
-import { AsyncLocalStorageService } from './common/async-local-storage.service';
-import { LoggerModule } from './modules/logger/logger.module';
+import { RequestContextMiddleware } from '@app/my-library/middleware/request-context.middleware';
+import { AsyncLocalStorageService } from '@app/my-library/async-storage-service/async-local-storage.service';
+import { LoggerModule } from '@app/my-library/logger/logger.module';
 
 @Module({
   imports: [
-    LoggerModule,
+    LoggerModule.forRoot('123'),
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],

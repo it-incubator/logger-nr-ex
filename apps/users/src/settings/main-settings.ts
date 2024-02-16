@@ -9,7 +9,7 @@ import { ConfigService } from '@nestjs/config';
 import { errorFormatter } from '../common/exceptions/error-formatter';
 import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 import { AllExceptionsFilter } from '../common/exceptions/exceptionFilters';
-import { CustomLogger } from '../modules/logger/logger.service';
+import { CustomLogger } from '@app/my-library/logger/logger.service';
 
 const configSwagger = new DocumentBuilder()
   .setTitle('Logger')

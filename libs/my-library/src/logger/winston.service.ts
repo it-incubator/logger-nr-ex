@@ -3,7 +3,7 @@ import * as Transport from 'winston-transport';
 
 import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
-import { ConfigurationType } from '../../settings/configuration';
+import { ConfigurationType } from '../../../../apps/users/src/settings/configuration';
 
 const customLevels = {
   levels: {
@@ -23,9 +23,12 @@ const { combine, prettyPrint, timestamp, errors, colorize } = winston.format;
 @Injectable()
 export class WinstonService {
   private logger: winston.Logger;
-  private serviceName = 'user micriservice';
+  //private serviceName = 'user micriservice';
 
-  constructor(private configService: ConfigService<ConfigurationType, true>) {
+  constructor(
+    private configService: ConfigService<ConfigurationType, true>,
+    private serviceName: string,
+  ) {
     const loggerSettings = this.configService.get('loggerEnvironmentSettings', {
       infer: true,
     });

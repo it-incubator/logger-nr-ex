@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { ConfigurationType } from './settings/configuration';
 import { appSettings } from './settings/main-settings';
-import { CustomLogger } from './modules/logger/logger.service';
+import { CustomLogger } from '@app/my-library/logger/logger.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { bufferLogs: true });

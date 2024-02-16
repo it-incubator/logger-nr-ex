@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateUserDto, User } from '../../domain/entities/User.entity';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { UsersRepository } from '../../infra/users.repository';
-import { CustomLogger } from '../../../logger/logger.service';
+import { CustomLogger } from '@app/my-library/logger/logger.service';
 
 @Injectable()
 export class CreateUserCommand {

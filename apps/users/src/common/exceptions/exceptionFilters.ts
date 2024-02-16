@@ -6,7 +6,7 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { CustomLogger } from '../../modules/logger/logger.service';
+import { CustomLogger } from '@app/my-library/logger/logger.service';
 
 const getDefaultResponseHttpBody = (status: number) => ({
   statusCode: status,

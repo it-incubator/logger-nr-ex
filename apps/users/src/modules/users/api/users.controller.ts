@@ -2,7 +2,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
 import { CreateUserCommand } from '../application/use-cases/create-user.use-case';
 import { IsNumber, IsString } from 'class-validator';
-import { CustomLogger } from '../../logger/logger.service';
+import { CustomLogger } from '@app/my-library/logger/logger.service';
 
 class CreateUserInputDto {
   @IsString()

@@ -6,8 +6,7 @@ import { UsersQueryRepository } from './infra/users.query-repository';
 import { CqrsModule } from '@nestjs/cqrs';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './domain/entities/User.entity';
-import { LoggerModule } from '../logger/logger.module';
-import { AsyncLocalStorageService } from '../../common/async-local-storage.service';
+import { AsyncLocalStorageService } from '@app/my-library/async-storage-service/async-local-storage.service';
 
 @Module({
   imports: [CqrsModule, TypeOrmModule.forFeature([User])],
